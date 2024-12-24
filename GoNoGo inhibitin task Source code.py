@@ -8,11 +8,20 @@ pygame.init()
 screen=pygame.display.set_mode((800, 600))
 pygame.display.set_caption('G-NGO Paradigm')
 
-base_dir = r''
+base_dir = os.path.join(os.path.dirname(__file__), 'Images')
 
 #Image set, Sample folder provided on sources jpg folder, small cross and triangle no Gos for this setting
-images=['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg', 'image6.jpg', 'image7.jpg', 'image8.jpg']
-no_go_images=['image6.jpg', 'image8.jpg']
+images=[os.path.join(base_dir, 'image1.jpg'),
+        os.path.join(base_dir, 'image2.jpg'),
+        os.path.join(base_dir, 'image3.jpg'),
+        os.path.join(base_dir, 'image4.jpg'),
+        os.path.join(base_dir, 'image5.jpg'),
+        os.path.join(base_dir, 'image6.jpg'),
+        os.path.join(base_dir, 'image7.jpg'),
+        os.path.join(base_dir, 'image8.jpg')]
+
+no_go_images=[os.path.join(base_dir, 'image6.jpg'),
+              os.path.join(base_dir, 'image8.jpg')]
 
 loaded_images={img: pygame.image.load(img) for img in images}
 
